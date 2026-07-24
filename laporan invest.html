@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Akhir Pasar Modal - Kelompok Bareksa</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js untuk Diagram Interaktif -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-emerald-700 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-chart-line text-2xl text-emerald-300"></i>
+                <span class="font-bold text-xl tracking-wider">PASAR MODAL LAB</span>
+            </div>
+            <div class="hidden md:flex space-x-6 font-medium text-sm">
+                <a href="#profil" class="hover:text-emerald-200 transition">Profil</a>
+                <a href="#produk" class="hover:text-emerald-200 transition">Produk</a>
+                <a href="#alur" class="hover:text-emerald-200 transition">Alur Dana</a>
+                <a href="#alokasi" class="hover:text-emerald-200 transition">Portofolio</a>
+                <a href="#jurnal" class="hover:text-emerald-200 transition">Jurnal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-emerald-500 text-xs font-bold uppercase px-3 py-1 rounded-full tracking-wider">Tugas Akhir Kelompok</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Laporan Praktik Investasi Reksa Dana Syariah via Bareksa</h1>
+            <p class="text-emerald-100 text-lg mb-8">Analisis implementasi instrumen pasar modal syariah, alur kerja pengelolaan dana, dan portofolio TRIM Syariah Saham.</p>
+            <a href="#alur" class="bg-white text-emerald-800 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-emerald-50 transition">Lihat Alur Dana</a>
+        </div>
+    </header>
+
+    <!-- PROFIL BAREKSA -->
+    <section id="profil" class="py-16 container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Profil Platform Transaksi</h2>
+            <div class="h-1 w-20 bg-emerald-600 mx-auto mt-3"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100">
+                <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                    <strong>Bareksa</strong> bertindak sebagai Agen Penjual Efek Reksa Dana (APERD) yang menjembatani investor (kelompok kami) dengan pihak pengelola dana (Manajer Investasi). 
+                </p>
+                <p class="leading-relaxed text-gray-600">
+                    Aplikasi ini diawasi resmi oleh <strong>OJK</strong>, memastikan transaksi pembelian reksa dana TRIM Syariah tercatat secara legal di KSEI (Kustodian Sentral Efek Indonesia).
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold text-xl text-emerald-800 mb-4">Kelebihan Menggunakan Bareksa:</h3>
+                <ul class="space-y-4 text-sm text-gray-600">
+                    <li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-1 mr-3"></i> <span><strong>Tanpa Biaya Transaksi:</strong> Pembelian dan penjualan TRIM Syariah Saham tidak dikenakan potongan biaya (Rp0).</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-1 mr-3"></i> <span><strong>Filter Syariah:</strong> Memudahkan penyaringan produk yang 100% mematuhi kaidah Daftar Efek Syariah (DES).</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-check text-emerald-600 mt-1 mr-3"></i> <span><strong>Transparansi Data:</strong> Fund Fact Sheet dan laporan alokasi dana diperbarui setiap bulan.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION BARU: ALUR PENGELOLAAN DANA (MENJAWAB PERTANYAANMU) -->
+    <section id="alur" class="bg-emerald-800 text-white py-16 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Bagaimana Uang Kita Diputar?</h2>
+                <p class="text-emerald-200 mt-2">Alur kerja PT Trimegah Asset Management dalam mengelola dana investor.</p>
+                <div class="h-1 w-20 bg-emerald-400 mx-auto mt-3"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-6 relative">
+                <!-- Garis Penghubung (Hanya muncul di Desktop) -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-emerald-600 -z-0 transform -translate-y-1/2"></div>
+                
+                <!-- Step 1 -->
+                <div class="bg-emerald-900 p-6 rounded-xl border border-emerald-600 relative z-10 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-white text-emerald-800 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 shadow">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">1. Pengumpulan Dana</h4>
+                    <p class="text-xs text-emerald-200 leading-relaxed">Uang yang disetor kelompok via Bareksa digabung dengan ribuan investor lain menjadi satu kumpulan dana besar.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-emerald-900 p-6 rounded-xl border border-emerald-600 relative z-10 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-white text-emerald-800 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 shadow">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">2. Analisis Manajer Investasi</h4>
+                    <p class="text-xs text-emerald-200 leading-relaxed">Ahli keuangan dari Trimegah menganalisis pasar untuk mencari perusahaan syariah yang sehat dan prospektif.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-emerald-900 p-6 rounded-xl border border-emerald-600 relative z-10 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-white text-emerald-800 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 shadow">
+                        <i class="fa-solid fa-money-bill-trend-up"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">3. Pembelian Aset Riil</h4>
+                    <p class="text-xs text-emerald-200 leading-relaxed">Uang "dibelanjakan" untuk membeli saham perusahaan syariah, sukuk negara, dan disimpan di deposito syariah.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="bg-emerald-900 p-6 rounded-xl border border-emerald-600 relative z-10 text-center shadow-lg">
+                    <div class="w-16 h-16 bg-white text-emerald-800 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 shadow">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">4. Pembagian Keuntungan</h4>
+                    <p class="text-xs text-emerald-200 leading-relaxed">Saat perusahaan membagikan dividen atau harga saham naik, nilai investasi kita (NAB) ikut bertambah.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ALOKASI DANA & DIAGRAM PORTOFOLIO -->
+    <section id="alokasi" class="py-16 container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Rincian Belanja Manajer Investasi</h2>
+            <p class="text-gray-600 mt-2">Bukti alokasi dana TRIM Syariah Saham (Bulan Mei 2026)</p>
+            <div class="h-1 w-20 bg-emerald-600 mx-auto mt-3"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-center mb-12">
+            <!-- Diagram Alokasi Aset -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col items-center">
+                <h3 class="font-bold text-lg text-emerald-800 mb-4 text-center">Komposisi Portofolio</h3>
+                <div class="w-full max-w-xs">
+                    <canvas id="allocationChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Penjelasan Detail -->
+            <div class="space-y-4">
+                <h3 class="font-bold text-xl text-emerald-800">Penjelasan Pemakaian Dana</h3>
+                <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                    Sesuai prospektus, uang investor dialokasikan ke dalam 3 jenis instrumen untuk menjaga keseimbangan antara pertumbuhan dan keamanan dana:
+                </p>
+
+                <div class="space-y-4">
+                    <div class="bg-gray-50 p-3 rounded border-l-4 border-emerald-500">
+                        <div class="flex justify-between items-center text-sm font-bold text-gray-800 mb-1">
+                            <span>1. Beli Saham Syariah (Kepemilikan Perusahaan)</span>
+                            <span class="text-emerald-700">89,77%</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Dana terbesar dipakai untuk membeli saham perusahaan halal di Bursa Efek Indonesia (seperti Telkom, Indofood) untuk meraih *capital gain*.</p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-3 rounded border-l-4 border-amber-500">
+                        <div class="flex justify-between items-center text-sm font-bold text-gray-800 mb-1">
+                            <span>2. Beli Sukuk (Pembiayaan Proyek Negara)</span>
+                            <span class="text-amber-600">5,50%</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Sebagian dana dipinjamkan ke pemerintah (SBSN) dengan sistem bagi hasil untuk mendapatkan keuntungan tetap yang stabil.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-3 rounded border-l-4 border-teal-600">
+                        <div class="flex justify-between items-center text-sm font-bold text-gray-800 mb-1">
+                            <span>3. Kas / Pasar Uang Syariah (Deposito)</span>
+                            <span class="text-teal-700">4,73%</span>
+                        </div>
+                        <p class="text-xs text-gray-500">Sisa dana disimpan di bank syariah sebagai uang tunai. Ini berguna jika sewaktu-waktu investor ingin mencairkan dananya (*likuiditas*).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualisasi Top Holdings -->
+        <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100">
+            <h3 class="font-bold text-xl text-emerald-800 mb-2 text-center"><i class="fa-solid fa-list-check mr-2"></i> 10 Aset Terbesar Yang Dibeli (Top Holdings)</h3>
+            <p class="text-xs text-center text-gray-500 mb-6">Inilah perusahaan-perusahaan tempat uang kelompok kita ditanamkan (Mei 2026)</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-tower-cell text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Telkom Indonesia (Persero) Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-building-columns text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Bank Syariah Indonesia Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-amber-200 flex items-center space-x-3 bg-amber-50/30">
+                    <i class="fa-solid fa-file-contract text-2xl text-amber-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">SBSN Seri PBS030</h4>
+                        <span class="text-[10px] bg-amber-100 text-amber-800 font-semibold px-2 py-0.5 rounded">Sukuk Negara</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-gem text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Aneka Tambang Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-fire-flame-simple text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Perusahaan Gas Negara Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-scroll text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Indah Kiat Pulp and Paper Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-bowl-food text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Indofood CBP Sukses Makmur Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-industry text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Indofood Sukses Makmur Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-ship text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Wintermar Offshore Marine Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-flask text-2xl text-emerald-600 w-8 text-center"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">Surya Esa Perkasa Tbk</h4>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Saham Syariah</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-8 px-6 text-center border-t border-gray-800">
+        <div class="container mx-auto">
+            <p class="text-sm">&copy; 2026 Tugas Akhir Mata Kuliah Pasar Modal. All Rights Reserved.</p>
+            <p class="text-xs text-gray-600 mt-2">Dibuat dengan dedikasi akademis kelompok reksa dana.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT INITIALIZATION UNTUK CHART.JS -->
+    <script>
+        const ctx = document.getElementById('allocationChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Alokasi Saham', 'Alokasi Obligasi', 'Alokasi Lainnya'],
+                datasets: [{
+                    data: [89.77, 5.5, 4.73],
+                    backgroundColor: [
+                        '#10b981', // Emerald 500 (Saham)
+                        '#f59e0b', // Amber 500 (Obligasi/Sukuk)
+                        '#0d9488'  // Teal 600 (Lainnya)
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff',
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 13
+                            },
+                            padding: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ' ' + context.label + ': ' + context.raw + '%';
+                            }
+                        }
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+    </script>
+</body>
+</html>DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Akhir Pasar Modal - Kelompok Bareksa</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js untuk Diagram Interaktif -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-emerald-700 text-white sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-chart-line text-2xl text-emerald-300"></i>
+                <span class="font-bold text-xl tracking-wider">PASAR MODAL LAB</span>
+            </div>
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#profil" class="hover:text-emerald-200 transition">Profil</a>
+                <a href="#daftar" class="hover:text-emerald-200 transition">Cara Daftar</a>
+                <a href="#review" class="hover:text-emerald-200 transition">Kelebihan & Kekurangan</a>
+                <a href="#produk" class="hover:text-emerald-200 transition">Analisis Produk</a>
+                <a href="#alokasi" class="hover:text-emerald-200 transition">Alokasi & Diagram</a>
+                <a href="#jurnal" class="hover:text-emerald-200 transition">Jurnal Investasi</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-r from-emerald-800 to-emerald-600 text-white py-20 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-emerald-500 text-xs font-bold uppercase px-3 py-1 rounded-full tracking-wider">Tugas Akhir Kelompok</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Laporan Praktik Investasi Reksa Dana via Bareksa</h1>
+            <p class="text-emerald-100 text-lg mb-8">Analisis implementasi instrumen pasar modal, alokasi portofolio TRIM Syariah Saham, dan rekam jejak hasil investasi.</p>
+            <a href="#profil" class="bg-white text-emerald-800 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-emerald-50 transition">Mulai Membaca</a>
+        </div>
+    </header>
+
+    <!-- PROFIL BAREKSA -->
+    <section id="profil" class="py-16 container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Profil Aplikasi Bareksa</h2>
+            <div class="h-1 w-20 bg-emerald-600 mx-auto mt-3"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+            <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100">
+                <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                    <strong>Bareksa</strong> merupakan FinTech Marketplace Reksa Dana Pertama di Indonesia yang telah resmi terdaftar dan diawasi oleh <strong>Otoritas Jasa Keuangan (OJK)</strong>. 
+                </p>
+                <p class="leading-relaxed text-gray-600">
+                    Platform ini bertindak sebagai agen penjual efek reksa dana yang menjembatani investor dengan berbagai Manajer Investasi terkemuka, mempermudah proses transaksi secara digital, transparan, dan aman.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold text-xl text-emerald-800 mb-4">Fitur Utama Pendukung Praktik:</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 mr-3"></i> <span><strong>Robo Advisor:</strong> Memberikan rekomendasi alokasi produk berdasarkan profil risiko kelompok.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 mr-3"></i> <span><strong>Bareksa Umroh:</strong> Simulasi dan tabungan berbasis reksa dana syariah.</span></li>
+                    <li class="flex items-start"><i class="fa-solid fa-circle-check text-emerald-600 mt-1 mr-3"></i> <span><strong>Diversifikasi Mudah:</strong> Akses ke ratusan produk reksa dana dalam satu aplikasi.</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARA DAFTAR -->
+    <section id="daftar" class="bg-emerald-800 text-white py-16 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Bagaimana Mendaftar Akun</h2>
+                <div class="h-1 w-20 bg-emerald-300 mx-auto mt-3"></div>
+            </div>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-emerald-700/50 p-6 rounded-xl border border-emerald-600">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">1</div>
+                    <h4 class="font-bold mb-2">Unduh Aplikasi</h4>
+                    <p class="text-sm text-emerald-200">Download Bareksa via Play Store atau App Store.</p>
+                </div>
+                <div class="bg-emerald-700/50 p-6 rounded-xl border border-emerald-600">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">2</div>
+                    <h4 class="font-bold mb-2">Isi Data Awal</h4>
+                    <p class="text-sm text-emerald-200">Masukkan nomor HP dan email aktif kelompok.</p>
+                </div>
+                <div class="bg-emerald-700/50 p-6 rounded-xl border border-emerald-600">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">3</div>
+                    <h4 class="font-bold mb-2">Verifikasi E-KYC</h4>
+                    <p class="text-sm text-emerald-200">Unggah foto KTP, selfie, dan data rekening bank.</p>
+                </div>
+                <div class="bg-emerald-700/50 p-6 rounded-xl border border-emerald-600">
+                    <div class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">4</div>
+                    <h4 class="font-bold mb-2">Tanda Tangan</h4>
+                    <p class="text-sm text-emerald-200">Tanda tangan digital. Akun aktif dalam 1x24 jam.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KELEBIHAN & KEKURANGAN -->
+    <section id="review" class="py-16 container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Review Analisis Platform</h2>
+            <div class="h-1 w-20 bg-emerald-600 mx-auto mt-3"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Kelebihan -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-emerald-600">
+                <h3 class="text-xl font-bold text-emerald-800 mb-4"><i class="fa-solid fa-thumbs-up mr-2 text-emerald-600"></i> Kelebihan Platform</h3>
+                <ul class="space-y-3 text-gray-600 text-sm">
+                    <li class="flex items-start"><i class="fa-solid fa-plus text-emerald-600 mr-2 mt-1"></i> Pilihan produk reksa dana sangat variatif dan lengkap.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-plus text-emerald-600 mr-2 mt-1"></i> Keamanan dana terjamin tinggi karena diawasi oleh OJK.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-plus text-emerald-600 mr-2 mt-1"></i> Metode pembayaran ekosistem digital sangat luas (E-Wallet & VA).</li>
+                    <li class="flex items-start"><i class="fa-solid fa-plus text-emerald-600 mr-2 mt-1"></i> Minimum pembelian sangat terjangkau bagi kantong mahasiswa.</li>
+                </ul>
+            </div>
+            <!-- Kekurangan -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-red-500">
+                <h3 class="text-xl font-bold text-red-800 mb-4"><i class="fa-solid fa-thumbs-down mr-2 text-red-500"></i> Kekurangan Platform</h3>
+                <ul class="space-y-3 text-gray-600 text-sm">
+                    <li class="flex items-start"><i class="fa-solid fa-minus text-red-500 mr-2 mt-1"></i> Likuiditas reksa dana membutuhkan waktu T+2 hingga T+7 hari kerja.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-minus text-red-500 mr-2 mt-1"></i> Antarmuka aplikasi versi web terasa sedikit lambat di perangkat tertentu.</li>
+                    <li class="flex items-start"><i class="fa-solid fa-minus text-red-500 mr-2 mt-1"></i> Tampilan awal aplikasi terkadang terlalu padat dengan menu promosi.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUK PILIHAN -->
+    <section id="produk" class="bg-gray-100 py-16 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Produk Investasi Pilihan Kelompok</h2>
+                <div class="h-1 w-20 bg-emerald-600 mx-auto mt-3"></div>
+            </div>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-md mb-8">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center border-b pb-4 mb-6">
+                    <div>
+                        <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full uppercase">Reksa Dana Saham Syariah</span>
+                        <h3 class="text-2xl font-bold text-emerald-800 mt-2">TRIM Syariah Saham</h3>
+                    </div>
+                    <div class="mt-2 md:mt-0 text-gray-500 text-sm">
+                        <p><strong>Manajer Investasi:</strong> PT Trimegah Asset Management</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3"><i class="fa-solid fa-lightbulb text-amber-500 mr-2"></i> Alasan Pemilihan Produk:</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-gray-600">
+                            <li><strong>Kepatuhan Syariah:</strong> Terbebas dari unsur riba, judi, dan gharar karena hanya menginvestasikan dana pada emiten yang masuk Daftar Efek Syariah (DES).</li>
+                            <li><strong>Optimalisasi Return:</strong> Karakteristik reksa dana saham memberikan potensi pertumbuhan imbal hasil tinggi untuk jangka panjang.</li>
+                            <li><strong>Kredibilitas MI:</strong> Trimegah Asset Management berpengalaman dalam pengelolaan aset berbasis syariah secara profesional.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-3"><i class="fa-solid fa-compass text-blue-500 mr-2"></i> Prospek Masa Depan:</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                            Produk ini memiliki prospek yang cerah seiring dengan pertumbuhan industri keuangan syariah di Indonesia.
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Alokasi pada sektor-sektor defensif seperti barang konsumen (consumer goods) dan telekomunikasi memberikan ketahanan ekstra saat terjadi volatilitas pasar makro.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION BARU: ALOKASI DANA & DIAGRAM PORTOFOLIO -->
+    <section id="alokasi" class="py-16 container mx-auto px-6 max-w-5xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Ke Mana Dana Dikelola?</h2>
+            <p class="text-gray-600 mt-2">Transparansi Alokasi Aset & Efek Terbesar TRIM Syariah Saham</p>
+            <div class="h-1 w-20 bg-emerald-600 mx-auto mt-3"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-center mb-12">
+            <!-- Diagram Alokasi Aset -->
+            <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col items-center">
+                <h3 class="font-bold text-lg text-emerald-800 mb-4 text-center">Diagram Kebijakan Investasi</h3>
+                <div class="w-full max-w-xs">
+                    <canvas id="allocationChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Penjelasan Sektor Usaha -->
+            <div class="space-y-4">
+                <h3 class="font-bold text-xl text-emerald-800">Sektor Pengalokasian Utama</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Dana investor yang terkumpul dialokasikan oleh Manajer Investasi pada perusahaan-perusahaan yang terdaftar dalam <strong>Daftar Efek Syariah (DES)</strong> dengan pembagian sektor utama berikut:
+                </p>
+
+                <div class="space-y-3">
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-700 mb-1">
+                            <span>Barang Konsumen Primer (Consumer Goods)</span>
+                            <span>35%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 h-2 rounded-full">
+                            <div class="bg-emerald-600 h-2 rounded-full" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-700 mb-1">
+                            <span>Infrastruktur & Telekomunikasi</span>
+                            <span>25%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 h-2 rounded-full">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 25%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-700 mb-1">
+                            <span>Keuangan Syariah (Perbankan)</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 h-2 rounded-full">
+                            <div class="bg-amber-500 h-2 rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm font-semibold text-gray-700 mb-1">
+                            <span>Lainnya (Barang Baku, Industri, & Kas)</span>
+                            <span>20%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 h-2 rounded-full">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualisasi Top Holdings (Saham Terbesar yang Dibeli) -->
+        <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100">
+            <h3 class="font-bold text-xl text-emerald-800 mb-6 text-center"><i class="fa-solid fa-boxes-stacked mr-2"></i> Kepemilikan Efek Terbesar (Top Holdings)</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-tower-cell text-2xl text-emerald-600"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">TLKM</h4>
+                        <p class="text-xs text-gray-500">Telkom Indonesia Tbk</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-bowl-food text-2xl text-emerald-600"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">ICBP</h4>
+                        <p class="text-xs text-gray-500">Indofood CBP Sukses</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-building-columns text-2xl text-emerald-600"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">BRIS</h4>
+                        <p class="text-xs text-gray-500">Bank Syariah Indonesia</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-industry text-2xl text-emerald-600"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">INDF</h4>
+                        <p class="text-xs text-gray-500">Indofood Sukses Makmur</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-pump-soap text-2xl text-emerald-600"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">UNVR</h4>
+                        <p class="text-xs text-gray-500">Unilever Indonesia Tbk</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-emerald-100 flex items-center space-x-3">
+                    <i class="fa-solid fa-car text-2xl text-emerald-600"></i>
+                    <div>
+                        <h4 class="font-bold text-gray-800 text-sm">ASII</h4>
+                        <p class="text-xs text-gray-500">Astra International Tbk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JURNAL PERJALANAN KELOMPOK -->
+    <section id="jurnal" class="py-16 container mx-auto px-6 max-w-4xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900">Jurnal Perjalanan Investasi</h2>
+            <div class="h-1 w-20 bg-emerald-600 mx-auto mt-3"></div>
+            <p class="text-gray-500 text-sm mt-4 italic">"Catatan dinamika pergerakan portofolio kelompok kami dari minggu ke minggu"</p>
+        </div>
+
+        <div class="relative border-l-2 border-emerald-600 ml-4 md:ml-32 space-y-8">
+            <!-- Minggu 1 -->
+            <div class="relative pl-6">
+                <div class="absolute -left-[11px] top-1 w-5 h-5 bg-emerald-600 rounded-full border-4 border-white"></div>
+                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-1">Minggu 01 — Eksekusi Awal</span>
+                <h4 class="font-bold text-lg text-gray-800 mb-2">Top-Up Dana & Pembelian Pertama</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Kelompok kami melakukan alokasi dana awal pada produk TRIM Syariah Saham. Proses pemesanan melalui aplikasi Bareksa berjalan instan, portofolio awal masih berada di posisi netral (0%).
+                </p>
+            </div>
+            <!-- Minggu 2 -->
+            <div class="relative pl-6">
+                <div class="absolute -left-[11px] top-1 w-5 h-5 bg-emerald-600 rounded-full border-4 border-white"></div>
+                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-1">Minggu 02-03 — Uji Psikologis Pasar</span>
+                <h4 class="font-bold text-lg text-gray-800 mb-2">Fluktuasi Nilai Aktiva Bersih (NAB)</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Terjadi sedikit penurunan nilai portofolio akibat sentimen pasar global. Di fase ini, kelompok belajar pentingnya manajemen emosi investor dan memahami bahwa investasi saham bersifat fluktuatif dalam jangka pendek.
+                </p>
+            </div>
+            <!-- Minggu 3 -->
+            <div class="relative pl-6">
+                <div class="absolute -left-[11px] top-1 w-5 h-5 bg-emerald-600 rounded-full border-4 border-white"></div>
+                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-1">Minggu 04 — Fase Pemulihan</span>
+                <h4 class="font-bold text-lg text-gray-800 mb-2">Pasar Rebound & Portofolio Menghijau</h4>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                    Pasar modal kembali menguat (*rebound*). Saham-saham syariah dalam kelolaan TRIM menunjukkan kinerja positif, membawa portofolio kelompok kami masuk ke zona hijau dengan *return* yang memuaskan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-8 px-6 text-center border-t border-gray-800">
+        <div class="container mx-auto">
+            <p class="text-sm">&copy; 2026 Tugas Akhir Mata Kuliah Pasar Modal. All Rights Reserved.</p>
+            <p class="text-xs text-gray-600 mt-2">Dibuat dengan dedikasi akademis kelompok reksa dana.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT INITIALIZATION UNTUK CHART.JS -->
+    <script>
+        const ctx = document.getElementById('allocationChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Saham Syariah (Ekuitas)', 'Pasar Uang Syariah & Kas'],
+                datasets: [{
+                    data: [92, 8],
+                    backgroundColor: [
+                        '#059669', // Emerald 600
+                        '#cbd5e1'  // Slate 300
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
